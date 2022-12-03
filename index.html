@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,8 +9,11 @@
     <script defer src="script.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <header><h1>ROCK PAPER SCISSOR</h1></header>
+    <header>
+        <h1>ROCK PAPER SCISSOR</h1>
+    </header>
     <h2>The first to 5 point wins!</h2>
 
 
@@ -24,24 +28,39 @@
                 <div class="hidden winner you">Winner!</div>
 
                 <h1>You</h1>
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 258.75 258.75" style="enable-background:new 0 0 258.75 258.75;" xml:space="preserve">
-<g>
-	<circle cx="129.375" cy="60" r="60"/>
-	<path d="M129.375,150c-60.061,0-108.75,48.689-108.75,108.75h217.5C238.125,198.689,189.436,150,129.375,150z"/>
-</g>
-</svg>
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 258.75 258.75"
+                    style="enable-background:new 0 0 258.75 258.75;" xml:space="preserve">
+                    <g>
+                        <circle cx="129.375" cy="60" r="60" />
+                        <path
+                            d="M129.375,150c-60.061,0-108.75,48.689-108.75,108.75h217.5C238.125,198.689,189.436,150,129.375,150z" />
+                    </g>
+                </svg>
                 <div class="score-box you">0</div>
                 <h2>Score</h2>
 
-            </div> 
+            </div>
+            <div class="results-box">
+                <h1 class="current-round">Round 1</h1>
+                <div class="choices">
+                    <div class="human-choice">✊</div>
+                    <h2>VS</h2>
+                    <div class="cpu-choice">🤚</div>
+                </div>
+                    <div class="round-results"></div>
+
+               
+              
+            </div>
             <div class="cpu">
                 <div class="hidden winner cpu">Winner!</div>
                 <h1>CPU</h1>
-                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                     viewBox="0 0 505.136 505.136" style="enable-background:new 0 0 505.136 505.136;" xml:space="preserve">
-               
-                        <path d="M394.538,379.66c0.032-0.208,0.064-0.396,0.064-0.616v-59.94c0-0.268,0.092-0.504,0.048-0.76
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 505.136 505.136"
+                    style="enable-background:new 0 0 505.136 505.136;" xml:space="preserve">
+
+                    <path d="M394.538,379.66c0.032-0.208,0.064-0.396,0.064-0.616v-59.94c0-0.268,0.092-0.504,0.048-0.76
                             c2.524-2.808,4.008-6.484,4.008-10.556c0-3.98-0.108-7.584-4.056-10.372V219.5c3.944-2.248,7.968-6.952,7.968-12.348
                             c0-7.288-5.724-13.36-12.964-13.744c-0.172-0.028-0.256-0.04-0.436-0.04h-25.784c0-10.88-8.852-19.736-19.736-19.736h-35.868
                             v-15.784h15.952c10.884,0,19.564-8.684,19.564-19.564v-12.008h3.02c7.22,0,12.764-5.636,12.764-12.86V44.764
@@ -70,8 +89,8 @@
                             S193.382,82.296,193.382,71.348z M252.51,283.812c-21.576,0-39.132-17.56-39.132-39.132c0-21.58,17.556-39.136,39.132-39.136
                             c21.584,0,39.132,17.56,39.132,39.136C291.642,266.252,274.094,283.812,252.51,283.812z M292.562,91.204
                             c-10.952,0-19.856-8.912-19.856-19.856c0-10.948,8.904-19.86,19.856-19.86c10.944,0,19.856,8.912,19.856,19.86
-                            S303.506,91.204,292.562,91.204z"/>
-         
+                            S303.506,91.204,292.562,91.204z" />
+
                 </svg>
                 <div class="score-box cpu">0</div>
                 <h2>Score</h2>
@@ -79,16 +98,16 @@
             </div>
         </div>
         <div class="player-container">
-            <button class="btn" data-id="rock" >✊</button>
+            <button class="btn" data-id="rock">✊</button>
             <button class="btn" data-id="paper">🤚</button>
             <button class="btn" data-id="scissor">✌️</button>
-            </div>
-      
-
-    </div>
-    <div class="round-results"></div>
         </div>
 
-    
+
+    </div>
+    </div>
+
+
 </body>
+
 </html>
