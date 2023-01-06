@@ -91,17 +91,16 @@ function playRound(playerSelection, computerSelection) {
     return "Cpu";
   } else {
     para("You win! " + playerSelection + " beats " + computerSelection+"!");
-    return "Player";
+    return "You";
   }
 }
 //stats for every round of the game
 function statsRound(user) {
-  if (user.includes("Player")) {
+  if (user.includes("You")) {
     round++;
     playerScore++;
     scoreBoxYou.textContent = playerScore
     currentRound.textContent = `Round ${round}`
-    para(" winner is: " + user);
 
   } else if (user.includes("Cpu")) {
     round++;
@@ -109,8 +108,6 @@ function statsRound(user) {
     scoreBoxCpu.textContent = cpuScore
     currentRound.textContent = `Round ${round}`
 
-
-    para( " winner is " + user);
   } else if (user.includes("No winner")) {
     round++;
     currentRound.textContent = `Round ${round}`
@@ -134,11 +131,11 @@ function game() {
       statsRound(winner);
     }
   if (playerScore ==5) {
-    para("The winner of the game is you!");
+    para("The winner of the game is You!");
     
-for (let i = 0; i < button.length; i++) {
-  button[i].disabled = true;
-}
+    button.forEach((btn) =>{
+      btn.disabled = true;
+    })
 winTextYou.classList.remove("hidden");
 rematch();
 }
@@ -154,11 +151,10 @@ switch (computerSelection) {
   cpuChoiceImg.textContent ="✌️"
 }
   if (cpuScore == 5) {
-    para("The winner of the game is the cpu!");
-    for (let i = 0; i < button.length; i++) {
-      button[i].disabled = true;
-
-    }
+    para("The winner of the game is the CPU!");
+    button.forEach((btn) =>{
+      btn.disabled = true;
+    })
     winTextCpu.classList.remove("hidden");
 
     rematch();
