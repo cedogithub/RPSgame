@@ -14,7 +14,7 @@
     <header>
         <h1>ROCK PAPER SCISSOR</h1>
     </header>
-    <h2>The first to 5 point wins!</h2>
+    <h2 class="instructions">The first to 5 point wins!</h2>
 
 
     <!--<div class="game-container">
@@ -25,10 +25,10 @@
     <div class="game">
         <div class="players">
             <div class="human">
-                <div class="hidden winner you"><img  class="winner" src="./pngfind.com-winner-png-257076.png" alt="">
-                    </div>
+                <div class="hidden winner you"><img class="winner" src="./pngfind.com-winner-png-257076.png" alt="">
+                </div>
 
-                <h1>You</h1>
+                <h1>PLAYER</h1>
                 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 258.75 258.75"
                     style="enable-background:new 0 0 258.75 258.75;" xml:space="preserve">
@@ -43,19 +43,18 @@
 
             </div>
             <div class="results-box">
-                <h1 class="current-round">Round 1</h1>
+                <h1 class="current-round">ROUND: <span class="round">0</span></h1>
                 <div class="choices">
-                    <div class="human-choice">✊</div>
-                    <h2>VS</h2>
-                    <div class="cpu-choice">🤚</div>
+                    <div class="human-choice"><img class="human-src" src="" alt=""></div>
+                    <img class="vs" src="./images/versus.png" width="140px" alt="">
+                    <div class="cpu-choice"><img class="cpu-src" src="" alt=""></div>
                 </div>
-                    <div class="round-results"></div>
+                <div class="round-results"></div>
 
-               
-              
             </div>
             <div class="cpu">
-                <div class="hidden winner cpu"><img class="winner" src="./pngfind.com-winner-png-257076.png" alt=""></div>
+                <div class="hidden winner cpu"><img class="winner" src="./pngfind.com-winner-png-257076.png" alt="">
+                </div>
                 <h1>CPU</h1>
                 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 505.136 505.136"
@@ -98,17 +97,25 @@
 
             </div>
         </div>
-        <div class="hidden player-container">
-            <button class="btn" data-id="rock">✊</button>
-            <button class="btn" data-id="paper">🤚</button>
-            <button class="btn" data-id="scissor">✌️</button>
+        <div class="player-container">
+            <div class="">
+                <h2>Make your selection!</h2>
+            </div>
+            <div>
+                <img class="btn" src="./images/granite.png" data-id="rock" width="100px" alt="">
+                <img class="btn" src="./images/paper.png" data-id="paper" width="100px" alt="">
+                <img class="btn" src="./images/scissors.png" data-id="scissor" width="100px" alt="">
+            </div>
         </div>
+        <div class="rematch-location"></div>
 
 
     </div>
     </div>
 
-
+    <footer>
+        copyright cedogithub © 2023
+    </footer>
 </body>
 
 </html>
