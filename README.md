@@ -17,7 +17,7 @@ Cedric Forges
 
 * 2.0
     * Complete overhaul of the UI
-    * See [commit change]() or See [release history]()
+    * See [commit change](https://github.com/cedogithub/RPSgame/commits/rps-ui)
 * 0.1
     * Initial Release
 
