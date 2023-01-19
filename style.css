@@ -35,6 +35,10 @@ body {
   flex-direction: column;
   justify-content: center;
 }
+.player-container h2{
+ 
+
+}
 .hidden {
   display: none;
 }
@@ -60,7 +64,7 @@ body {
 }
 
 header {
-  padding: 2em 0;
+  padding: 1em 0;
   font-family: "Press Start 2P" !important;
   margin-bottom: 2em;
   background-color: #e73c7e;
@@ -98,21 +102,23 @@ h2 {
   font-family: "Press Start 2P";
   font-weight: 800;
   height: 50px;
-  font-size: 30px;
+  font-size: 32px;
   width: 80px;
-  margin: 0.5em 0;
+  margin: 0.5em 0.3em;
   align-items: center;
   justify-content: center;
-  display: flex;
+  display: flex; 
 }
+
 .results-box {
   border-radius: 6px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   width: 600px;
-  padding: 0em 1em;
-  height: 400px;
-  max-height: 560px;
+  padding: 0.5em 1em;
+  height: 420px;
+  max-height:500px;
   max-width: 450px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
 }
 .results-box h1 {
   margin-top: 0.5em;
@@ -157,6 +163,46 @@ h2 {
 .cpu-src {
   width: 90px;
 }
+/*Animations for the VS */
+.human-choice{
+    position: relative;
+    -webkit-animation: linear infinite;
+    -webkit-animation-name: human;
+    -webkit-animation-duration: 1.5s;
+  }
+  @-webkit-keyframes human {
+    0% {
+      left: 0;
+    }
+    50% {
+      left: 45px;
+    }
+    100% {
+      left: 0;    
+    }
+  }
+
+  .cpu-choice{
+    position: relative;
+    -webkit-animation: linear infinite;
+    -webkit-animation-name: cpu;
+    -webkit-animation-duration: 1.5s;
+
+  }
+
+  @-webkit-keyframes cpu {
+    0% {
+      right: 0;
+    }
+    50% {
+      right: 45px;
+    }
+    100% {
+      right: 0;    
+    }
+  }
+
+/*---------------------------------*/
 
 svg {
   fill: #ffffff;
@@ -169,7 +215,7 @@ svg {
   transform: scale(1.1);
 }
 
-.rematchbtn {
+.rematchbtn{
   align-items: center;
   background-image: linear-gradient(135deg, #f34079 40%, #fc894d);
   border: 0;
@@ -195,27 +241,24 @@ svg {
   touch-action: manipulation;
 }
 
-.remat:active {
-  outline: 0;
+.rematchbtn:hover {
+  opacity: 0.92;
 }
-
-.remat:hover {
-  outline: 0;
-}
-
-.remat span {
-  transition: all 200ms;
-}
-
-.remat:hover span {
-  transform: scale(0.9);
-  opacity: 0.75;
-}
-
 footer {
   margin-top: 5em;
   font-size: 20px;
   font-family: "League Spartan", sans-serif;
 
   margin-bottom: 1em;
+}
+
+.robot-svg{
+  width: 100%;
+  height: auto;
+
+  
+
+}
+.img-robot{
+  margin-right: 1em;
 }
