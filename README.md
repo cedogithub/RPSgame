@@ -1,7 +1,7 @@
 
 https://cedogithub.github.io/RPSgame/
 
-![image](https://user-images.githubusercontent.com/39746523/211826190-1c2f5ff5-ed1e-4b21-8f6a-f6d78cbbfb8a.png)
+![image](https://user-images.githubusercontent.com/39746523/218254090-a53e2220-7719-42c1-bd39-8dbeb243f981.png)
 # Rock, paper & scissor game
 
 ## Description
@@ -14,7 +14,10 @@ Play here : https://cedogithub.github.io/RPSgame/
 Cedric Forges  
 
 ## Version History
-
+* 2.1 
+    * New animation to the winner
+    * Changes to the font
+    * Changes to the result box height
 * 2.0
     * Complete overhaul of the UI
     * See [commit change](https://github.com/cedogithub/RPSgame/commits/rps-ui)
