@@ -53,6 +53,10 @@ function rematch() {
 //When the user clicks one of the 3 choices of RPS
 for (let i = 0; i < button.length; i++) {
   button[i].addEventListener("click", (e) => {
+    //sound when user clicks
+    let audio = new Audio('./mixkit-arcade-game-jump-coin-216.mp3');
+    audio.play();
+    
     switch (e.target.dataset.id) {
       case "rock":
         playerSelection = "rock";
