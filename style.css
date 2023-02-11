@@ -2,6 +2,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Asap:wght@700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Raleway&family=Roboto:wght@500&display=swap');
+
 
 * {
   box-sizing: border-box;
@@ -72,8 +74,10 @@ header {
 }
 h2 {
   font-size: 36px;
-  font-family: "League Spartan", sans-serif;
   font-weight: bold;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
 }
 
 .players {
@@ -114,7 +118,7 @@ h2 {
   border-radius: 6px;
   width: 600px;
   padding: 0.5em 1em;
-  height: 420px;
+  height: 430px;
   max-height:500px;
   max-width: 450px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -137,7 +141,8 @@ h2 {
   justify-content: space-between;
 }
 .round-results {
-  font-family: "League Spartan", sans-serif;
+  font-family: 'Roboto';
+  text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
 }
 .hidden {
   display: none;
@@ -145,7 +150,6 @@ h2 {
 .winner img {
   object-fit: cover;
   width: 100px;
-  transform: scale(2);
   transition: all 2s;
   margin-bottom: 20px;
 }
@@ -153,7 +157,10 @@ h2 {
   margin-bottom: 10px;
   font-size: 30px;
   letter-spacing: 3px;
-  font-family: "Press Start 2P" !important;
+  text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+  0px 8px 13px rgba(0,0,0,0.1),
+  0px 18px 23px rgba(0,0,0,0.1);
+  font-family: 'Roboto', sans-serif;
 }
 .round {
   color: #e73c7e;
@@ -239,6 +246,7 @@ svg {
   user-select: none;
   font-family: "League Spartan", sans-serif;
   touch-action: manipulation;
+  margin-top: 2em;
 }
 
 .rematchbtn:hover {
