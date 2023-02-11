@@ -62,7 +62,7 @@ body {
 }
 
 .round-results {
-  font-size: 24px;
+    font-size: 24px;
 }
 
 header {
@@ -118,7 +118,7 @@ h2 {
   border-radius: 6px;
   width: 600px;
   padding: 0.5em 1em;
-  height: 430px;
+  height: 370px;
   max-height:500px;
   max-width: 450px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -128,10 +128,10 @@ h2 {
   margin-top: 0.5em;
 }
 .results-txt {
-  font-size: 40px;
   font-weight: 700;
-  line-height: 1.1em;
+  line-height: 1.4em;
   letter-spacing: 0.5px;
+  font-size: 28px;
 }
 
 .choices {
