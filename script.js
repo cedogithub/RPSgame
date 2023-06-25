@@ -1,48 +1,49 @@
-//global variables and buttons for the game
-let choice = ["rock", "paper", "scissor"];
+// Global variables and buttons for the game
+let choices = ["rock", "paper", "scissors"];
 let playerScore = 0;
 let cpuScore = 0;
 let round = 0;
-let button = document.querySelectorAll(".btn");
-let divResults = document.querySelector(".round-results");
+let buttons = document.querySelectorAll(".btn");
+let roundResults = document.querySelector(".round-results");
 let playerSelection = "";
 let scoreBoxYou = document.querySelector(".score-box.you");
 let scoreBoxCpu = document.querySelector(".score-box.cpu");
-let winTextYou = document.querySelector(".winner.you");
-let winTextCpu = document.querySelector(".winner.cpu");
-let rematch1 = document.querySelector(".rematchbtn");
+let winnerTextYou = document.querySelector(".winner.you");
+let winnerTextCpu = document.querySelector(".winner.cpu");
+let rematchButton = document.querySelector(".rematchbtn");
 let roundNumber = document.querySelector(".round");
 let humanChoiceImg = document.querySelector(".human-choice");
-let humanSrc = document.querySelector(".human-src");
-let cpuSrc = document.querySelector(".cpu-src");
+let humanImageSrc = document.querySelector(".human-src");
+let cpuImageSrc = document.querySelector(".cpu-src");
 let resultsBox = document.querySelector(".results-box");
 let choiceContainer = document.querySelector(".player-container");
 let instructions = document.querySelector(".instructions");
 
-//displaying the rounds results in the main middle box
-function para(test) {
-  const p = document.createElement("p");
-  p.textContent = test;
-  p.classList.add("results-txt");
-  divResults.appendChild(p);
+// Function to display the round results in the main middle box
+function displayResults(text) {
+  const paragraph = document.createElement("p");
+  paragraph.textContent = text;
+  paragraph.classList.add("results-txt");
+  roundResults.appendChild(paragraph);
 }
 
-//Restarts the match
+// Function to restart the match
 function rematch() {
   let rematchBtn = document.createElement("button");
   rematchBtn.textContent = "Rematch?";
-  divResults.appendChild(rematchBtn);
+  roundResults.appendChild(rematchBtn);
   rematchBtn.classList.add("rematchbtn");
   rematchBtn.addEventListener("click", () => {
-    divResults.textContent = "";
+    // Resetting the game state
+    roundResults.textContent = "";
     scoreBoxCpu.textContent = 0;
     scoreBoxYou.textContent = 0;
     roundNumber.textContent = 0;
     playerScore = 0;
     cpuScore = 0;
     round = 0;
-    winTextYou.classList.add("hidden");
-    winTextCpu.classList.add("hidden");
+    winnerTextYou.classList.add("hidden");
+    winnerTextCpu.classList.add("hidden");
     choiceContainer.classList.remove("hidden");
     instructions.textContent = "Score 5 points to Win the Game!";
     instructions.style.fontFamily = "League Spartan";
@@ -50,120 +51,126 @@ function rematch() {
     instructions.style.color = "white";
   });
 }
-//When the user clicks one of the 3 choices of RPS
-for (let i = 0; i < button.length; i++) {
-  button[i].addEventListener("click", (e) => {
-    //sound when user clicks 
-    let audio = new Audio('./mixkit-arcade-game-jump-coin-216.mp3'); 
-    audio.play();
+
+// Event listener for when the user clicks one of the 3 choices of RPS
+for (let i = 0; i < buttons.length; i++) {
+  buttons[i].addEventListener("click", (e) => {
+    // Play sound when user clicks
+    let clickSound = new Audio('/clickSound.mp3');
+    clickSound.play();
+
+    // Set the player's selection based on the clicked button
     switch (e.target.dataset.id) {
       case "rock":
         playerSelection = "rock";
-        humanSrc.src = "./rock.png";
-
+        humanImageSrc.src = "./rock.png";
         break;
       case "paper":
         playerSelection = "paper";
-        humanSrc.src = "./paper.png";
-
+        humanImageSrc.src = "./paper.png";
         break;
-      case "scissor":
-        playerSelection = "scissor";
-        humanSrc.src = "./scissors.png";
+      case "scissors":
+        playerSelection = "scissors";
+        humanImageSrc.src = "./scissors.png";
+        break;
     }
 
+    // Start the game
     game();
   });
 }
 
-//Randomizer of the computer choice of rps
+// Function to get a random computer choice for RPS
 function getComputerChoice() {
-  let randomChoice = [Math.floor(Math.random() * choice.length)];
-  return choice[randomChoice];
+  let randomIndex = Math.floor(Math.random() * choices.length);
+  return choices[randomIndex];
 }
 
-//Logic to determine the winner or loser of the game
+// Function to determine the winner or loser of the game
 function playRound(playerSelection, computerSelection) {
   playerSelection = playerSelection.toLowerCase();
-  let round = 0;
+
   if (playerSelection === computerSelection) {
-    para("its a tie!");
+    displayResults("It's a tie!");
     return "No winner";
   } else if (playerSelection === "rock" && computerSelection === "paper") {
-    para("You lost! paper beats rock!");
+    displayResults("You lost! Paper beats rock!");
     return "Cpu";
-  } else if (playerSelection === "scissor" && computerSelection === "rock") {
-    para("You lost ! rocks beats scissor!");
+  } else if (playerSelection === "scissors" && computerSelection === "rock") {
+    displayResults("You lost! Rock beats scissors!");
     return "Cpu";
-  } else if (playerSelection === "paper" && computerSelection === "scissor") {
-    para("You lost ! scissor beats paper!");
+  } else if (playerSelection === "paper" && computerSelection === "scissors") {
+    displayResults("You lost! Scissors beats paper!");
     return "Cpu";
   } else {
-    para("You win! " + playerSelection + " beats " + computerSelection + "!");
+    displayResults("You win! " + playerSelection + " beats " + computerSelection + "!");
     return "You";
   }
 }
 
-//Stats for every round of the game
-function statsRound(user) {
-  if (user.includes("You")) {
+// Function to update the statistics for each round of the game
+function updateStats(winner) {
+  if (winner.includes("You")) {
     round++;
     playerScore++;
     scoreBoxYou.textContent = playerScore;
     roundNumber.textContent = round;
-  } else if (user.includes("Cpu")) {
+  } else if (winner.includes("Cpu")) {
     round++;
     cpuScore++;
     scoreBoxCpu.textContent = cpuScore;
     roundNumber.textContent = round;
-  } else if (user.includes("No winner")) {
+  } else if (winner.includes("No winner")) {
     round++;
     roundNumber.textContent = round;
   }
 }
-//Starts the game
+
+// Function to start the game
 function game() {
   let computerSelection = getComputerChoice();
-  if (
-    playerSelection === "scissor" ||
-    playerSelection === "rock" ||
-    playerSelection === "paper"
-  ) {
-    divResults.textContent = "";
+  
+  // Check if the player's selection is valid
+  if (choices.includes(playerSelection)) {
+    roundResults.textContent = "";
     let winner = playRound(playerSelection, computerSelection);
-    statsRound(winner);
+    updateStats(winner);
   }
-  if (playerScore == 5) {
-    para("The winner of the game is PLAYER!");
+
+  // Check if the player or CPU has reached the winning score
+  if (playerScore === 5) {
+    displayResults("The winner of the game is PLAYER!");
     choiceContainer.classList.add("hidden");
-    winTextYou.classList.remove("hidden");
+    winnerTextYou.classList.remove("hidden");
     instructions.textContent = "GAME OVER";
-    (instructions.style.fontFamily = "VT323"), "sans-serif";
+    instructions.style.fontFamily = "VT323";
     instructions.style.fontSize = "70px";
     instructions.style.color = "#e73c7e";
-
     rematch();
   }
 
+  // Update the CPU's image based on its selection
   switch (computerSelection) {
     case "rock":
-      cpuSrc.src = "./rock.png";
+      cpuImageSrc.src = "./rock.png";
       break;
     case "paper":
-      cpuSrc.src = "./paper.png";
+      cpuImageSrc.src = "./paper.png";
       break;
-    case "scissor":
-      cpuSrc.src = "./scissors.png";
+    case "scissors":
+      cpuImageSrc.src = "./scissors.png";
+      break;
   }
-  if (cpuScore == 5) {
-    para("The winner of the game is the CPU!");
+
+  // Check if the player or CPU has reached the winning score
+  if (cpuScore === 5) {
+    displayResults("The winner of the game is the CPU!");
     choiceContainer.classList.add("hidden");
-    (instructions.style.fontFamily = "VT323"), "sans-serif";
+    instructions.style.fontFamily = "VT323";
     instructions.textContent = "GAME OVER";
     instructions.style.fontSize = "70px";
     instructions.style.color = "#e73c7e";
-    winTextCpu.classList.remove("hidden");
-
+    winnerTextCpu.classList.remove("hidden");
     rematch();
   }
 }
